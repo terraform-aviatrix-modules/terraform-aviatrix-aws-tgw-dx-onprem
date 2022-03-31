@@ -35,7 +35,7 @@ account | The AWS account name, as known by the Aviatrix controller
 allowed_prefix | A list of prefixes to be announced to on-prem from the TGW
 aws_asn | AS Number to be used to TGW
 dx_gateway_id | ID of the Direct Connect Gateway
-transit_gw = Aviatrix Transit Gateway object with all attributes
+transit_gw | Aviatrix Transit Gateway object with all attributes
 
 The following variables are optional:
 

@@ -16,7 +16,7 @@ variable "dx_gateway_id" {
 
 variable "allowed_prefix" {
   description = "A list of prefixes to be announced to on-prem from the TGW"
-  type        = list(string)
+  type        = string
 }
 
 variable "aws_asn" {

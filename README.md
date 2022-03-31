@@ -14,13 +14,14 @@ v1.0.0 | v0.13 - v1.x | >=6.5 | >=2.20.3
 
 ### Usage Example
 ```
-module "transit_aws_1" {
-  source  = "terraform-aviatrix-modules/aws-transit/aviatrix"
+module "eu-west-1" {
+  source  = "terraform-aviatrix-modules/aws-tgw-dx-onprem/aviatrix"
   version = "1.0.0"
 
-  cidr = "10.1.0.0/20"
+  dx_gateway_id = "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxx"
+  allowed_prefix = "10.100.0.0/16, 172.18.0.0/23"
   region = "eu-west-1"
-  aws_account_name = "AWS"
+  account_name = "AWS"
 }
 ```
 

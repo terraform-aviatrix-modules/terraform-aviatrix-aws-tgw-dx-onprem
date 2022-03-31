@@ -64,8 +64,6 @@ key | default | value
 dx_gateway_id | \<newly created> | ID of the Direct Connect Gateway
 name | tgw_\<region> <br> dxgw_\<region> <br> transit_vif_\<region> | Name for TGW/DXGW/VIF
 
-aws_dx_connection
-
 ### Outputs
 This module will return the following outputs:
 

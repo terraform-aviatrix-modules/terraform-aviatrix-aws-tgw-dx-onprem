@@ -34,7 +34,7 @@ resource "aviatrix_aws_tgw_security_domain_connection" "cntonprem" {
   domain_name2 = aviatrix_aws_tgw_security_domain.Aviatrix_Edge_Domain.name
 }
 
-resource "aviatrix_aws_tgw_transit_gateway_attachment" "transit_attachmenet" {
+resource "aviatrix_aws_tgw_transit_gateway_attachment" "default" {
   tgw_name             = aviatrix_aws_tgw.default.tgw_name
   region               = var.region
   vpc_account_name     = var.account
@@ -42,7 +42,7 @@ resource "aviatrix_aws_tgw_transit_gateway_attachment" "transit_attachmenet" {
   transit_gateway_name = var.transit_gw.gw_name
 }
 
-resource "aviatrix_aws_tgw_directconnect" "vopak_aws_tgw_directconnect" {
+resource "aviatrix_aws_tgw_directconnect" "default" {
   tgw_name                   = aviatrix_aws_tgw.default.tgw_name
   directconnect_account_name = var.account
   dx_gateway_id              = var.dx_gateway_id

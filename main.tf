@@ -38,8 +38,8 @@ resource "aviatrix_aws_tgw_transit_gateway_attachment" "transit_attachmenet" {
   tgw_name             = aviatrix_aws_tgw.default.tgw_name
   region               = var.region
   vpc_account_name     = var.account
-  vpc_id               = data.terraform_remote_state.tgw.outputs.transit_gw.vpc_id
-  transit_gateway_name = data.terraform_remote_state.tgw.outputs.transit_gw.gw_name
+  vpc_id               = var.transit_gw.vpc_id
+  transit_gateway_name = var.transit_gw.gw_name
 }
 
 resource "aviatrix_aws_tgw_directconnect" "vopak_aws_tgw_directconnect" {

@@ -4,6 +4,10 @@ variable "name" {
   default     = ""
 }
 
+variable "transit_gw" {
+  description = "Transit Gateway object with all attributes"
+}
+
 variable "account" {
   description = "The AWS account name, as known by the Aviatrix controller"
   type        = string

@@ -16,6 +16,12 @@ variable "account" {
 variable "dx_gateway_id" {
   description = "ID of the Direct Connect Gateway"
   type        = string
+  default     = ""
+}
+
+variable "region" {
+  description = "AWS Region in which this module is deployed"
+  type        = string
 }
 
 variable "allowed_prefix" {
@@ -28,7 +34,19 @@ variable "aws_asn" {
   type        = number
 }
 
-variable "region" {
-  description = "AWS Region in which this module is deployed"
-  type        = string
+variable "onprem_asn" {
+  description = "AS Number to be used to On-Premise"
+  type        = number
+  default     = 0
+}
+
+variable "vlan" {
+  description = "VLAN ID for the transit VIF"
+  type        = number
+  default     = 0
+}
+
+variable "aws_dx_connection" {
+  description = "AWS DX Circuit ID"
+  default     = ""
 }

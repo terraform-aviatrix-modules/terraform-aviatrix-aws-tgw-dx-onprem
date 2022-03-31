@@ -22,7 +22,7 @@ module "eu-west-1" {
   dx_gateway_id  = "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxx"
   allowed_prefix = "10.100.0.0/16, 172.18.0.0/23"
   region         = "eu-west-1"
-  account_name   = "AWS"
+  account        = "AWS"
   transit_gw     = aviatrix_transit_gateway.my_transit
 }
 ```
@@ -35,7 +35,7 @@ module "eu-west-1" {
 
   allowed_prefix = "10.100.0.0/16, 172.18.0.0/23"
   region         = "eu-west-1"
-  account_name   = "AWS"
+  account        = "AWS"
   transit_gw     = aviatrix_transit_gateway.my_transit
 
   vlan              = 300

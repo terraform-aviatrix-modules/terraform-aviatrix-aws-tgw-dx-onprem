@@ -30,8 +30,8 @@ resource "aviatrix_aws_tgw_security_domain" "onprem_domain" {
 
 resource "aviatrix_aws_tgw_security_domain_connection" "cntonprem" {
   tgw_name     = aviatrix_aws_tgw.default.tgw_name
-  domain_name1 = aviatrix_aws_tgw_security_domain.Onprem_Domain.name
-  domain_name2 = aviatrix_aws_tgw_security_domain.Aviatrix_Edge_Domain.name
+  domain_name1 = aviatrix_aws_tgw_security_domain.onprem_domain.name
+  domain_name2 = aviatrix_aws_tgw_security_domain.aviatrix_edge_domain.name
 }
 
 resource "aviatrix_aws_tgw_transit_gateway_attachment" "default" {

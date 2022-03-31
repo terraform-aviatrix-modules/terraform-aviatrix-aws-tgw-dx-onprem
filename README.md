@@ -13,6 +13,8 @@ Module version | Terraform version | Controller version | Terraform provider ver
 v1.0.0 | v0.13 - v1.x | >=6.5 | >=2.20.3
 
 ### Usage Example
+
+Existing DXGW:
 ```
 module "eu-west-1" {
   source  = "terraform-aviatrix-modules/aws-tgw-dx-onprem/aviatrix"
@@ -23,6 +25,23 @@ module "eu-west-1" {
   region         = "eu-west-1"
   account_name   = "AWS"
   transit_gw     = aviatrix_transit_gateway.my_transit
+}
+```
+
+New DXGW + Transit VIF:
+```
+module "eu-west-1" {
+  source  = "terraform-aviatrix-modules/aws-tgw-dx-onprem/aviatrix"
+  version = "1.0.0"
+
+  allowed_prefix = "10.100.0.0/16, 172.18.0.0/23"
+  region         = "eu-west-1"
+  account_name   = "AWS"
+  transit_gw     = aviatrix_transit_gateway.my_transit
+
+  vlan              = 300
+  onprem_asn        = 65500
+  aws_dx_connection = "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxx"
 }
 ```
 

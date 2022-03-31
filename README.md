@@ -61,8 +61,8 @@ The following variables are optional:
 
 key | default | value 
 :---|:---|:---
-dx_gateway_id | <newly created> | ID of the Direct Connect Gateway
-name | tgw_<region> | Name for TGW
+dx_gateway_id | \<newly created> | ID of the Direct Connect Gateway
+name | tgw_\<region> | Name for TGW
 
 aws_dx_connection
 

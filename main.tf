@@ -45,7 +45,7 @@ resource "aviatrix_aws_tgw_transit_gateway_attachment" "default" {
 resource "aviatrix_aws_tgw_directconnect" "default" {
   tgw_name                   = aviatrix_aws_tgw.default.tgw_name
   directconnect_account_name = var.account
-  dx_gateway_id              = coalesce(var.dx_gateway_id, aws_dx_gateway.default.id)
+  dx_gateway_id              = coalesce(var.dx_gateway_id, aws_dx_gateway[0].default.id)
   security_domain_name       = aviatrix_aws_tgw_security_domain.onprem_domain.name
   allowed_prefix             = var.allowed_prefix
 }

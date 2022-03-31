@@ -34,17 +34,17 @@ key | value
 account | The AWS account name, as known by the Aviatrix controller
 allowed_prefix | A list of prefixes to be announced to on-prem from the TGW
 aws_asn | AS Number to be used to TGW
-transit_gw | Aviatrix Transit Gateway object with all attributes
-vlan | VLAN ID for the transit VIF. Not required when existing DXGW is used with dx_gateway_id.
 aws_dx_connection | AWS DX Circuit ID. Not required when existing DXGW is used with dx_gateway_id.
 onprem_asn | AS Number for on-premise customer router. Not required when existing DXGW is used with dx_gateway_id.
+transit_gw | Aviatrix Transit Gateway object with all attributes
+vlan | VLAN ID for the transit VIF. Not required when existing DXGW is used with dx_gateway_id.
 
 The following variables are optional:
 
 key | default | value 
 :---|:---|:---
-name | tgw_<region> | Name for TGW
 dx_gateway_id | <newly created> | ID of the Direct Connect Gateway
+name | tgw_<region> | Name for TGW
 
 aws_dx_connection
 

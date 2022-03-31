@@ -32,6 +32,11 @@ resource "aviatrix_aws_tgw_security_domain_connection" "cntonprem" {
   tgw_name     = aviatrix_aws_tgw.default.tgw_name
   domain_name1 = aviatrix_aws_tgw_security_domain.onprem_domain.name
   domain_name2 = aviatrix_aws_tgw_security_domain.aviatrix_edge_domain.name
+  depends_on = [
+    aviatrix_aws_tgw_security_domain.default_domain,
+    aviatrix_aws_tgw_security_domain.shared_service_domain,
+    aviatrix_aws_tgw_security_domain.aviatrix_edge_domain
+  ]
 }
 
 resource "aviatrix_aws_tgw_transit_gateway_attachment" "default" {
@@ -40,6 +45,9 @@ resource "aviatrix_aws_tgw_transit_gateway_attachment" "default" {
   vpc_account_name     = var.account
   vpc_id               = var.transit_gw.vpc_id
   transit_gateway_name = var.transit_gw.gw_name
+  depends_on = [
+    aviatrix_aws_tgw_security_domain.aviatrix_edge_domain
+  ]
 }
 
 resource "aviatrix_aws_tgw_directconnect" "default" {

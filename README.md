@@ -4,7 +4,7 @@
 This module uses AWS TGW, DXGW and Transit VIF to integrate Aviatrix transit to on-prem over DX without overlay.
 
 ### Diagram
-<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-aws-tgw-dx-onprem/blob/master/img/diagram.png?raw=true">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-aws-tgw-dx-onprem/blob/main/img/diagram.png?raw=true">
 
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version

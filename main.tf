@@ -49,21 +49,3 @@ resource "aviatrix_aws_tgw_directconnect" "default" {
   security_domain_name       = aviatrix_aws_tgw_security_domain.onprem_domain.name
   allowed_prefix             = var.allowed_prefix
 }
-
-resource "aws_dx_gateway" "default" {
-  count = var.dx_gateway_id == "" ? 1 : 0
-
-  name            = var.name != "" ? var.name : "dxgw_${var.region}"
-  amazon_side_asn = var.aws_asn
-}
-
-resource "aws_dx_transit_virtual_interface" "default" {
-  count = var.dx_gateway_id == "" ? 1 : 0
-
-  connection_id  = var.aws_dx_connection
-  dx_gateway_id  = aws_dx_gateway.default[0].id
-  name           = var.name != "" ? var.name : "transit_vif_${var.region}"
-  vlan           = var.vlan
-  address_family = "ipv4"
-  bgp_asn        = var.onprem_asn
-}

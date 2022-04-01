@@ -28,8 +28,9 @@ resource "aviatrix_aws_tgw_security_domain" "onprem_domain" {
   tgw_name = aviatrix_aws_tgw.default.tgw_name
 }
 
-resource "aviatrix_aws_tgw_security_domain_connection" "cntonprem" {
-  tgw_name     = aviatrix_aws_tgw.default.tgw_name
+resource "aviatrix_aws_tgw_peering_domain_conn" "cntonprem" {
+  tgw_name1    = aviatrix_aws_tgw.default.tgw_name
+  tgw_name2    = aviatrix_aws_tgw.default.tgw_name
   domain_name1 = aviatrix_aws_tgw_security_domain.onprem_domain.name
   domain_name2 = aviatrix_aws_tgw_security_domain.aviatrix_edge_domain.name
 }
